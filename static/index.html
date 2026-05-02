@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor Geopolítico</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="globe">🌐</span>
+      <div>
+        <h1>Monitor Geopolítico</h1>
+        <p class="subtitle">Notícias · Análise · Postagem</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div id="stats-bar" class="stats-bar"></div>
+      <button id="fetch-btn" class="btn btn-primary" onclick="fetchNews()">
+        <span id="fetch-icon">↻</span> Buscar Notícias
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="switchTab('news', this)">📰 Notícias</button>
+    <button class="tab" onclick="switchTab('history', this)">📁 Histórico de Análises</button>
+  </div>
+</nav>
+
+<!-- TAB: Notícias -->
+<main id="tab-news" class="tab-pane active">
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterNews('todas', this)">Todas</button>
+    <button class="filter-btn" onclick="filterNews('nacional', this)">🇧🇷 Nacional</button>
+    <button class="filter-btn" onclick="filterNews('internacional', this)">🌍 Internacional</button>
+  </div>
+  <div id="news-grid" class="news-grid">
+    <div class="empty-state">
+      <div class="empty-icon">📡</div>
+      <p>Clique em <strong>Buscar Notícias</strong> para carregar as últimas notícias dos principais veículos.</p>
+    </div>
+  </div>
+</main>
+
+<!-- TAB: Histórico -->
+<main id="tab-history" class="tab-pane">
+  <div id="history-list" class="history-list">
+    <div class="empty-state">
+      <div class="empty-icon">📂</div>
+      <p>Nenhuma análise realizada ainda.</p>
+    </div>
+  </div>
+</main>
+
+<!-- Modal de análise -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" title="Fechar">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
