@@ -35,8 +35,8 @@ pip install -q -r requirements.txt
 echo ""
 echo "  ┌──────────────────────────────────────────┐"
 echo "  │  Monitor Geopolítico                      │"
-echo "  │  Acesse: http://localhost:8000            │"
+echo "  │  Acesse: http://localhost:8002            │"
 echo "  └──────────────────────────────────────────┘"
 echo ""
 
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 8002 --reload
